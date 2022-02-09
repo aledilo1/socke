@@ -29,5 +29,5 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as s:
             cs.sendall(ris.encode("UTF-8"))
             print(ris)
         
-
+ 
 

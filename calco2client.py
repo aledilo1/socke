@@ -5,7 +5,7 @@ HOST="127.0.0.1"
 PORT=22003
 def invia_comandi(sock_service):
     while True:
-        primoNumero=input("Inserisci il primo numero exit() per uscire: ")
+        primoNumero=input("exit() per uscire.Inserisci il primo numero : ")
         if primoNumero=="exit()":
             break
         primoNumero=float(primoNumero)
