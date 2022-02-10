@@ -1,10 +1,8 @@
 import socket
 from threading import Thread
 import json
-
 HOST="127.0.0.1"
 PORT=22003
-
 def ricevi_comandi(sock_service, addr_client):
     print("avviato")
     while True:
@@ -23,7 +21,7 @@ def ricevi_comandi(sock_service, addr_client):
             ris=primoNumero-secondoNumero
         elif operazione=="*":
             ris=primoNumero*secondoNumero
-        elif operazione=="/":
+        elif operazione==":":
             if secondoNumero==0:
                 ris="Non puoi dividere per 0"
             else:
@@ -35,7 +33,6 @@ def ricevi_comandi(sock_service, addr_client):
         ris=str(ris)
         sock_service.sendall(ris.encode("UTF-8"))
     sock_service.close()
-
 def ricevi_connessioni(sock_listen):
     while True:
         sock_service, addr_client = sock_listen.accept()
@@ -46,7 +43,6 @@ def ricevi_connessioni(sock_listen):
         except:
             print("Il thread non si avvia")
             sock_listen.close()
-
 def avvia_server(HOST,PORT):
     sock_listen=socket.socket()
     sock_listen.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -54,6 +50,5 @@ def avvia_server(HOST,PORT):
     sock_listen.listen(5)
     print("Server in ascolto su %s." % str((HOST, PORT)))
     ricevi_connessioni(sock_listen)
-
 if __name__=='__main__':
     avvia_server(HOST,PORT)
