@@ -20,12 +20,12 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as s:
             data=data.decode()
             data=json.loads(data)
             stringa=data['stringa']
-            if stringa != "ko":
+            if stringa != "0":
                 ris="messaggio numero"+ str(contatore)+ ":" +stringa
                 contatore+=1
             #risposta al client
             else:
-                ris='Ricevuto "ko" dal server'
+                ris='Ricevuto "0" dal client'
             cs.sendall(ris.encode("UTF-8"))
             print(ris)
         
