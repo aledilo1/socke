@@ -30,21 +30,21 @@ def genera_richieste(num,address,port):
     #dovrà essere svolta
     if(operaNum==0):
         operazione="+"
-        ris=primoNumero+secondoNumero
+        #ris=primoNumero+secondoNumero
     elif(operaNum==1):
         operazione="-"
-        ris=primoNumero-secondoNumero
+       # ris=primoNumero-secondoNumero
     elif(operaNum==2):
         operazione="*"
-        ris=primoNumero*secondoNumero
+        #ris=primoNumero*secondoNumero
     elif(operaNum==3):
         operazione="/"
-        ris=primoNumero/secondoNumero
+        #ris=primoNumero/secondoNumero
     else:
         operazione="%"
-        ris=primoNumero%secondoNumero
+        #ris=primoNumero%secondoNumero
     
-    print(f"il primo numero è:{primoNumero},l'operazione è:{operazione},il secondo numero è:{secondoNumero},il risultato è:{ris}")
+    print(f"il primo numero è:{primoNumero},l'operazione è:{operazione},il secondo numero è:{secondoNumero}")
     #stampiamo il risultato della generazione casuale dei numeri e dell operazione
     #2. comporre il messaggio, inviarlo come json e ricevere il risultato
     messaggio={
